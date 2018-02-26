@@ -2,6 +2,8 @@ var mysql = require("mysql");
 var inquirer = require("inquirer");
 var Table = require("cli-table");
 var colors = require("colors")
+var code = require("./key.js")
+
 
 
 var connection = mysql.createConnection({
@@ -12,7 +14,7 @@ var connection = mysql.createConnection({
   user: "root",
 
   // Your password
-  password: "gogeta1",
+  password: code,
   database: "bamazon_db"
 });
 
