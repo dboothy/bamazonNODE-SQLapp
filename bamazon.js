@@ -16,7 +16,7 @@ var connection = mysql.createConnection({
   database: "bamazon_db"
 });
 
-var purchasedArray = [];
+
 
 connection.connect(function(err){
 	if (err) throw err;
@@ -44,53 +44,75 @@ function readTable(){
 		
 }
 
-function purchaseItem(){
+	function purchaseItem(){
 
-	connection.query("SELECT * FROM products", function(err, results){
+	connection.query("SELECT * FROM products", function(err, results) {
 		if (err) throw err;
 
 	inquirer
 		.prompt([
-		{
-			name: "purchase",
-			type: "rawlist",
-			choices: function() {
-				var choiceArray = [];
-				for (var i = 0; i < results.length; i++) {
-					choiceArray.push(results[i].product_name);
-				}
-				return choiceArray;
-			},
-			message: "\nWhat is the ID of the item you would like to purchase?\n"
-		},
-		{
-			name:"purchase",
-			type:"input",
-			message: "What is the item ID for the product you would you like to purchase"
-		}
-	])
-	.then(function(response){
-
-		var chosenItem;
-		for (var i = 0; i < results.length; i++){
-			if (results[i].ProductName === response.purchase){
-				chosenItem = results[i];
-			}
-		}
-		connection.query(
-			"UPDATE products SET ? WHERE ?",
-			[
-				{
-					stock_q: response.purchase
+			{
+				name: "list",
+				type: "rawlist",
+				choices: function() {
+					var choiceArray = [];
+					for (var i = 0; i < results.length; i++) {
+						choiceArray.push(results[i].product_name);
+					}
+					return choiceArray;
 				},
-				{
-					id: chosenItem.id
-				}
-			],
-			function(error) {
-				
+				message: "\nWhat is the ID of the item you would like to purchase?\n"
+			},
+			{
+				name:"purchase",
+				type:"input",
+				message: "How many would like to purchase?"
 			}
-			)
+		])
+		.then(function(response){
+
+			var chosenItem;
+			for (var i = 0; i < results.length; i++){
+				if (results[i].product_name === response.list){
+					chosenItem = results[i];
+				}
+			}
+			console.log(chosenItem)
+			// if (chosenItem.stock_q)
+
+
+			if (chosenItem.stock_q >= parseInt(response.purchase)){	
+			var changeStock = chosenItem.stock_q - parseInt(response.purchase)		
+			connection.query(
+				"UPDATE products SET ? WHERE ?",
+				[
+					{
+						stock_q: changeStock
+					},
+					{
+						id: chosenItem.id
+					}
+				],
+			function(error) {
+			if(error) throw err;
+			console.log("Item purchased")
+			readTable();
+			}
+		);
+	}
+	else{
+		console.log("Not enough stock!")
+	}
+})
+	});
+
+}
+
+
+		
+		
+	
+
 			// var input = response.purchase
 			// var inputParsed = parseInt(input)
 
@@ -106,9 +128,6 @@ function purchaseItem(){
 			// 	console.log(purchasedArray)
 				
 			
-			})
-		})
-	}
 
 
 
