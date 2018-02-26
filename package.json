@@ -1,0 +1,27 @@
+{
+  "name": "Homework",
+  "version": "1.0.0",
+  "description": "App using Node and SQL simulating taking of orders from customers and depleting stock from store's inventory",
+  "main": "bamazon.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cli-table": "^0.3.1",
+    "colors": "^1.1.2",
+    "inquirer": "^5.1.0",
+    "mysql": "^2.15.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dboothy/bamazonNODE-SQLapp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dboothy/bamazonNODE-SQLapp/issues"
+  },
+  "homepage": "https://github.com/dboothy/bamazonNODE-SQLapp#readme"
+}
