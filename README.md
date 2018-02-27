@@ -9,19 +9,15 @@ Node Package Managers (NPMs)
 
 
 
-![Alt Text] 
-("assets/bamazongif1")
+![]("assets/bamazongif1")
 
-![Alt Text] 
-("assets/bamazongif2")
+![]("assets/bamazongif2")
 
 
-![Alt Text] 
-("assets/bamazongif3")
+![]("assets/bamazongif3")
 
 
-![Alt Text] 
-("assets/bamazongif4")
+![]("assets/bamazongif4")
 
 
 
