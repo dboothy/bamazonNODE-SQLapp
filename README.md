@@ -1,11 +1,37 @@
 # bamazon App
 
+The bamazon app connects to a database 
 App built with Node and SQL which simulates the taking of orders from customers, purchasing of products and the resulting depletion of stock from a store's inventory.
 
-<h1> Command Line Interface  </h1>
+## Getting Started
+
+To get started, below are some instructions for what is needed to get bamazon up and running.
+
+###Prequisites
 
 
-Node Package Managers (NPMs)
+
+###Requirements
+
+Node must be installed for bamazon to work.
+
+MySQL must also be installed. 
+
+Node Package Managers needed for bamazon: 
+
+After installing NPM, install the listed NPMs:
+
+cli-table
+mysql
+inquirer
+
+###Database 
+
+bamazon uses a mysql database and generates the data from a created table.
+
+Use my sql to insert data into 
+
+
 
 <<<<<<< HEAD
 ![](assets/table.gif)
