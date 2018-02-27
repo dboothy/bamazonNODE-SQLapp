@@ -31,7 +31,7 @@ function readTable(){
 		if(err) console.log(err)
 
 		var table = new Table({
-				head: ["id", "ProductName", "DepartmentName", "Price", "QuantityInStock" ]
+				head: ["id", "Product Name", "Department Name", "Price ($)", "Quantity in Stock" ]
 		})
 
 		for (var i = 0; i < res.length; i ++){
@@ -106,6 +106,7 @@ function readTable(){
 	}
 	else{
 		console.log("Not enough stock!")
+		readTable()
 	}
 })
 	});
