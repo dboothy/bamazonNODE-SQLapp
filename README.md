@@ -7,7 +7,24 @@ App built with Node and SQL which simulates the taking of orders from customers,
 
 Node Package Managers (NPMs)
 
+<<<<<<< HEAD
 ![](assets/table.gif)
+=======
+
+
+![]("assets/bamazongif1")
+
+![]("assets/bamazongif2")
+
+
+![]("assets/bamazongif3")
+
+
+![]("assets/bamazongif4")
+
+
+
+>>>>>>> f899ded0e175a8e36298111debed520814dbf05f
 
 bamazon is an app that was built using node.js and is run on a Command Line Interface (CLI)
 
