@@ -46,6 +46,28 @@ require all NPMs that are needed listed under installation requirements.
 ## mySQL
 
 In node, create a connection to mySQL through a PORT that runs locally on your machine. Insert your mySQL credentials with the database name.
+```
+var connection = mysql.createConnection({
+//initializes connection to mysql via local server
+  host: "localhost",
+  port: 3306,
+
+  // Your username
+  user: "root",
+
+  // Your password
+  password: code,
+  database: "bamazon_db"
+});
+```
+
+
+
+
+```
+connection.query("SELECT * FROM products", function (err, res) { })
+
+```
 
 ## Table
 
@@ -54,16 +76,28 @@ Create a new table using "New" to insert column strings as the new table's colum
 Once connected, retrieve table data from the database with the query: SELECT * FROM (tablename) and iterate through the data and then inserting those vales with "toString".
 
 Doing this will generate your table on the command line.
+```
+table = new Table({
+head: ["id", "Product Name", "Department Name", "Price ($)", "Quantity in Stock" ]
+})
+```
 
 ## Inquirer
 
-Perform another connection query with a callback function passing in paramters to retrieve response from the table.
+```
 
-Choose the "rawlist" type prompt and keep track of its "name".
+function promptUserForQuantity() {
+inquirer
+.prompt([
+  {
+  //prompt collects user input
+    name:"purchase",
+    type:"input",
+    message: "How many would like to purchase? (Choose number or else will Quit)"
+  }
+])
+.then(function(response) { })
 
-Before adding the message to prompt users for the item ID that a user can choose from, add a choices function. Within the function, interate through the response to pull the name from each item within the table from the mySQL connection query and push to an empty array. After looping through the response name, return the array within choices, and the user selection will include the "name" from the data table response.
-
-The next prompt type will be "input" and will include the message asking the user for the quantity of items.
-
-Within the .then function after the inquirer prompt, interate through the response that was sent by the database in the previous connection query. Within the loop, create a condition for the interation so that input must be the same as th
+  ```
+Prompt users with an inquirer prompt.
 
