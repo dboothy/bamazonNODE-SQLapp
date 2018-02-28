@@ -8,7 +8,7 @@ App built with Node and SQL which simulates the taking of orders from customers,
 To get started, below are some instructions for what is needed to get bamazon up and running.
 
 
-##Requirements
+## Requirements
 
 Node must be installed for bamazon to work.
 
@@ -22,7 +22,7 @@ cli-table
 mysql
 inquirer
 
-##Database 
+## Database 
 
 bamazon uses mysql database to pull data from a created table.
 
@@ -33,17 +33,17 @@ Afterwards, insert the appropriate values.
 Then, run the table, save the database and continue to the node .js file for the logic.
 
 
-##Node
+## Node
 
-####NPMS
+#### NPMS
 require all NPMs that are needed listed under installation requirements.
 
 
-##mySQL
+## mySQL
 
 In node, create a connection to mySQL through a PORT that runs locally on your machine. Insert your mySQL credentials with the database name.
 
-##Table
+## Table
 
 Create a new table using "New" to insert column strings as the new table's column heads.
 
@@ -51,7 +51,7 @@ Once connected, retrieve table data from the database with the query: SELECT * F
 
 Doing this will generate your table on the command line.
 
-##Inquirer
+## Inquirer
 
 Perform another connection query with a callback function passing in paramters to retrieve response from the table.
 
@@ -69,13 +69,13 @@ Within the .then function after the inquirer prompt, interate through the respon
 
 ![](assets/table.gif)
 
-![]("assets/bamazongif1")
+![](assets/bamazongif1)
 
-![]("assets/bamazongif2")
+![](assets/bamazongif2)
 
-![]("assets/bamazongif3")
+![](assets/bamazongif3)
 
-![]("assets/bamazongif4")
+![](assets/bamazongif4)
 
 
 
