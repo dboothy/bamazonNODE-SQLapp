@@ -3,6 +3,10 @@
 The bamazon app connects to a database 
 App built with Node and SQL which simulates the taking of orders from customers, purchasing of products and the resulting depletion of stock from a store's inventory.
 
+![](assets/bamazongif1.gif)
+
+
+
 ## Getting Started
 
 To get started, below are some instructions for what is needed to get bamazon up and running.
@@ -57,42 +61,9 @@ Perform another connection query with a callback function passing in paramters t
 
 Choose the "rawlist" type prompt and keep track of its "name".
 
-Before adding the message to prompt users for the item ID that a user can choose from, add a choices function. Within th function, interate through the response to pull the name from each item within the table from the mySQL connection query and push to an empty array. After looping through the response name, return the array within choices, and the user selection will include the "name" from the data table response.
+Before adding the message to prompt users for the item ID that a user can choose from, add a choices function. Within the function, interate through the response to pull the name from each item within the table from the mySQL connection query and push to an empty array. After looping through the response name, return the array within choices, and the user selection will include the "name" from the data table response.
 
 The next prompt type will be "input" and will include the message asking the user for the quantity of items.
 
 Within the .then function after the inquirer prompt, interate through the response that was sent by the database in the previous connection query. Within the loop, create a condition for the interation so that input must be the same as th
-
-
-
-
-
-![](assets/table.gif)
-
-![](assets/bamazongif1)
-
-![](assets/bamazongif2)
-
-![](assets/bamazongif3)
-
-![](assets/bamazongif4)
-
-
-
->>>>>>> f899ded0e175a8e36298111debed520814dbf05f
-
-bamazon is an app that was built using node.js and is run on a Command Line Interface (CLI)
-
-When the bamazon app is started, a table displays listing all of the products for sale in the bamazon shop. The table's columns include the "id", the "Product Name", "Department Name", "Price ($)", and "Quantity in Stock". The rows for each product are numbered by the "id" and include the content details for each column. Resembling popular online shops with a variety of items, bamazon's inventory reflects such trends. 
-
-The user is prompted for input with a message asking "What is the ID of the item you would like to purchase?". The user's input is limited to the numbered list of items by the id in the table and must enter an existing id number from the table.
-
-The next prompt asks the user 
-
-
-From the user's perspective, bamazon begins with a display of a table that lists all of the items "for sale" available for "purchase". The table lists the 
-
-a prompt asking 
-
-
 
